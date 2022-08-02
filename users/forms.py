@@ -1,15 +1,7 @@
-from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 
-
-class BootstrapForm(forms.Form):
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        for visible in self.visible_fields():
-            if 'class' not in visible.field.widget.attrs:
-                visible.field.widget.attrs['class'] = ''
-            visible.field.widget.attrs['class'] += ' form-control'
+from main.forms import BootstrapForm
 
 
 class RegistrationForm(BootstrapForm, UserCreationForm):

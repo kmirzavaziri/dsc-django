@@ -7,6 +7,12 @@ __EXP = {
         'login': 'ورود',
         'register': 'ثبت نام',
         'home_page_content': 'سلام. به سامانه‌ی انتخاب واحد مجازی خوش آمدید.',
+        'contact_us': 'تماس با ما',
+        'contact_us_success': 'درخواست شما ثبت شد',
+        'back': 'بازگشت',
+        'contact_us.title': 'عنوان',
+        'contact_us.email': 'ایمیل',
+        'contact_us.text': 'متن',
     },
     'en-us': {
 
