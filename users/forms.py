@@ -2,10 +2,15 @@ from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 
+from main.dictionary import exp
 from main.forms import BootstrapForm
 
 
 class RegistrationForm(BootstrapForm, UserCreationForm):
+    error_messages = {
+        'password_mismatch': exp('register.error_messages.password_mismatch'),
+    }
+
     class Meta:
         model = User
         fields = ('first_name', 'last_name', 'username', 'email', 'password1', 'password2')
@@ -14,6 +19,11 @@ class RegistrationForm(BootstrapForm, UserCreationForm):
             'email': None,
             'password1': None,
             'password2': None,
+        }
+        error_messages = {
+            'username': {
+                'unique': exp('register.error_messages.unique_username'),
+            }
         }
 
 

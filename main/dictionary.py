@@ -20,6 +20,8 @@ __EXP = {
         'profile.first_name': 'نام',
         'profile.last_name': 'نام خانوادگی',
         'profile.username': 'نام کاربری',
+        'register.error_messages.unique_username': 'نام کاربری شما در سیستم موجود است',
+        'register.error_messages.password_mismatch': 'گذرواژه و تکرار گذرواژه یکسان نیستند',
     },
     'en-us': {
 
