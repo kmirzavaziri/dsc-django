@@ -5,6 +5,7 @@
 body {
     background-color: #434343;
     color: white;
+    overflow-x: hidden;
 }
 
 a {
@@ -21,14 +22,29 @@ ul {
     list-style-type: none;
 }
 
-.container {
-    margin: 10px;
-}
-
 .card {
     background-color: rgba(0, 0, 0, 0.6);
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     border-radius: 21px;
     color: white;
+}
+
+
+/* Django forms */
+.django-form br, .django-form .helptext {
+    display: none;
+}
+
+.errorlist {
+    color: #ffc107!important;
+}
+
+.django-form label {
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+.django-form .btn {
+    margin-top: 30px;
 }
