@@ -4,6 +4,7 @@ __EXP = {
     'fa-ir': {
         'django_project': 'پروژه جنگو',
         'home': 'صفحه اصلی',
+        'profile': 'نمایه',
         'logout': 'خروج',
         'login': 'ورود',
         'register': 'ثبت نام',
@@ -14,6 +15,9 @@ __EXP = {
         'contact_us.title': 'عنوان',
         'contact_us.email': 'ایمیل',
         'contact_us.text': 'متن',
+        'profile.first_name': 'نام',
+        'profile.last_name': 'نام خانوادگی',
+        'profile.username': 'نام کاربری',
     },
     'en-us': {
 

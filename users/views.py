@@ -33,3 +33,7 @@ def register_view(request):
     else:
         form = RegistrationForm()
     return render(request, 'users/register.html', {'form': form})
+
+
+def profile_view(request):
+    return render(request, 'users/profile.html')

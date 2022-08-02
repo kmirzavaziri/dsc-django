@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load main_extras %}
+
+{% block title %}{% exp 'profile' %}{% endblock %}
+
+{% block content %}
+    <div class="row justify-content-center">
+        <div class="col-md-6 p-5 mt-3 card">
+            <h1 class="align-self-center">{% exp 'profile' %}</h1>
+            <h6 class="text-secondary mt-4">{% exp 'profile.first_name' %}</h6>
+            <span id="text_first_name">{{ request.user.first_name }}</span>
+            <h6 class="text-secondary mt-4">{% exp 'profile.last_name' %}</h6>
+            <span id="text_last_name">{{ request.user.last_name }}</span>
+            <h6 class="text-secondary mt-4">{% exp 'profile.username' %}</h6>
+            <span id="text_user_name">{{ request.user.username }}</span>
+        </div>
+    </div>
+{% endblock %}

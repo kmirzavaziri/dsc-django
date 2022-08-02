@@ -31,6 +31,9 @@
         <ul class="navbar-nav">
             {% if request.user.is_authenticated %}
                 <li class="nav-item">
+                    <a id="profile" class="nav-link" href="{% url 'users:profile' %}">{% exp 'profile' %}</a>
+                </li>
+                <li class="nav-item">
                     <a id="logout" class="nav-link" href="{% url 'users:logout' %}">{% exp 'logout' %}</a>
                 </li>
             {% else %}
