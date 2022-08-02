@@ -1,0 +1,7 @@
+*:not(.force-ltr) {
+    direction: rtl;
+}
+
+.force-ltr {
+    direction: ltr;
+}
