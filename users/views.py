@@ -1,9 +1,10 @@
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.views import LoginView
 from django.shortcuts import render, redirect
 from django.urls import reverse
 
-from .forms import RegistrationForm, LoginForm
+from .forms import RegistrationForm, LoginForm, SettingForm
 from .decorators import not_logged_in_required
 
 
@@ -37,3 +38,15 @@ def register_view(request):
 
 def profile_view(request):
     return render(request, 'users/profile.html')
+
+
+@login_required
+def setting_view(request):
+    if request.method == 'POST':
+        form = SettingForm(request.POST, instance=request.user)
+        if form.is_valid():
+            form.save()
+            return redirect('users:profile')
+    else:
+        form = SettingForm(instance=request.user)
+    return render(request, 'users/setting.html', {'form': form})

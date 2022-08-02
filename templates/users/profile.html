@@ -13,6 +13,7 @@
             <span id="text_last_name">{{ request.user.last_name }}</span>
             <h6 class="text-secondary mt-4">{% exp 'profile.username' %}</h6>
             <span id="text_user_name">{{ request.user.username }}</span>
+            <a class="btn btn-primary mt-5" id="setting" href="{% url 'users:setting' %}">{% exp 'edit_profile' %}</a>
         </div>
     </div>
 {% endblock %}

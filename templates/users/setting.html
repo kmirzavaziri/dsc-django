@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load main_extras %}
+
+{% block title %}{% exp 'edit_profile' %}{% endblock %}
+
+{% block content %}
+    <div class="row justify-content-center">
+        <div class="col-md-6 p-5 mt-3 card">
+            <h1 class="align-self-center">{% exp 'edit_profile' %}</h1>
+            <form method="post" class="django-form">
+                {% csrf_token %}
+                {{ form.as_table }}
+                <input type="submit" class="btn btn-primary form-control" value="{% exp 'edit_profile' %}">
+            </form>
+        </div>
+    </div>
+{% endblock %}

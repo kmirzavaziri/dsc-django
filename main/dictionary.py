@@ -8,6 +8,7 @@ __EXP = {
         'logout': 'خروج',
         'login': 'ورود',
         'register': 'ثبت نام',
+        'edit_profile': 'ویرایش نمایه',
         'home_page_content': 'سلام. به سامانه‌ی انتخاب واحد مجازی خوش آمدید.',
         'contact_us': 'تماس با ما',
         'contact_us_success': 'درخواست شما ثبت شد',

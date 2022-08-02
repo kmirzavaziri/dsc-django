@@ -1,3 +1,4 @@
+from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 
@@ -18,3 +19,17 @@ class RegistrationForm(BootstrapForm, UserCreationForm):
 
 class LoginForm(BootstrapForm, AuthenticationForm):
     pass
+
+
+class SettingForm(BootstrapForm, forms.ModelForm):
+    class Meta:
+        model = User
+        fields = ['first_name', 'last_name']
+
+    def clean_first_name(self):
+        first_name = self.cleaned_data['first_name']
+        return first_name if first_name else self.instance.first_name
+
+    def clean_last_name(self):
+        last_name = self.cleaned_data['last_name']
+        return last_name if last_name else self.instance.last_name
