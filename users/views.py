@@ -1,6 +1,7 @@
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.views import LoginView
 from django.shortcuts import render, redirect
+from django.urls import reverse
 
 from .forms import RegistrationForm, LoginForm
 from .decorators import not_logged_in_required
@@ -10,6 +11,11 @@ class CustomLoginView(LoginView):
     authentication_form = LoginForm
     template_name = 'users/login.html'
     redirect_authenticated_user = True
+
+
+def logout_view(request):
+    logout(request)
+    return redirect(reverse('pages:home'))
 
 
 @not_logged_in_required

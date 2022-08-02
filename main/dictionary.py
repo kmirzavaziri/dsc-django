@@ -4,6 +4,7 @@ __EXP = {
     'fa-ir': {
         'django_project': 'پروژه جنگو',
         'home': 'صفحه اصلی',
+        'logout': 'خروج',
         'login': 'ورود',
         'register': 'ثبت نام',
         'home_page_content': 'سلام. به سامانه‌ی انتخاب واحد مجازی خوش آمدید.',
