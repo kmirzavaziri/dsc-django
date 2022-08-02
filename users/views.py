@@ -1,13 +1,15 @@
 from django.contrib.auth import authenticate, login
+from django.contrib.auth.views import LoginView
 from django.shortcuts import render, redirect
 
-from .forms import RegistrationForm
+from .forms import RegistrationForm, LoginForm
 from .decorators import not_logged_in_required
 
 
-@not_logged_in_required
-def login_view(request):
-    return render(request, '')
+class CustomLoginView(LoginView):
+    authentication_form = LoginForm
+    template_name = 'users/login.html'
+    redirect_authenticated_user = True
 
 
 @not_logged_in_required
