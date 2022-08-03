@@ -109,3 +109,12 @@ class TeacherListApiView(ApiListView):
                 'url': reverse('users:profile', args=(user.username, )),
             })
         return data
+
+
+@login_required
+@require_http_methods(["POST"])
+def delete_me(request):
+    user = request.user
+    logout(request)
+    user.delete()
+    return redirect(reverse('pages:home'))

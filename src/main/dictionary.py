@@ -56,6 +56,8 @@ __EXP = {
         'user.type.student': 'دانشجو',
         'search': 'جست‌وجو',
         'teacher_search_results': 'نتایج جست‌وجوی استاد',
+        'users.delete': 'حذف حساب کاربری',
+        'are_you_sure': 'آیا از انجام این عملیات مطمئن هستید؟',
     },
     'en-us': {
 
