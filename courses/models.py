@@ -1,13 +1,15 @@
 from django.db import models
 
+from main.dictionary import exp
+
 
 class Course(models.Model):
-    class WeekDay(models.TextChoices):
-        SATURDAY = '0'
-        SUNDAY = '1'
-        MONDAY = '2'
-        TUESDAY = '3'
-        WEDNESDAY = '4'
+    class WeekDay(models.IntegerChoices):
+        SATURDAY = 0, exp('week_day.saturday')
+        SUNDAY = 1, exp('week_day.sunday')
+        MONDAY = 2, exp('week_day.monday')
+        TUESDAY = 3, exp('week_day.tuesday')
+        WEDNESDAY = 4, exp('week_day.wednesday')
 
     department = models.CharField(max_length=128)
     name = models.CharField(max_length=128)
@@ -16,8 +18,11 @@ class Course(models.Model):
     teacher = models.CharField(max_length=128)
     start_time = models.TimeField()
     end_time = models.TimeField()
-    first_day = models.IntegerField(choices=WeekDay.choices)
-    second_day = models.IntegerField(choices=WeekDay.choices)
+    first_day = models.IntegerField(choices=WeekDay.choices, null=False, default=WeekDay.SATURDAY)
+    second_day = models.IntegerField(
+        choices=[(None, exp('week_day.blank'))] + WeekDay.choices,
+        null=True, blank=True, default=None
+    )
 
     def __str__(self):
         return self.name

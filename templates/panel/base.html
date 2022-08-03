@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load main_extras %}
+
+{% block styles %}
+        <link rel="stylesheet" href="{% static 'styles/panel/base.css' %}">
+{% endblock %}
+
+{% block title %}{% exp 'panel' %}{% endblock %}
+
+{% block content %}
+    <div id="wrapper">
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li><a id="make_new_course" href="{% url 'courses:new' %}">{% exp 'panel_menu.new_course' %}</a></li>
+            </ul>
+        </div>
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                {% block panel_content %}{% endblock %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

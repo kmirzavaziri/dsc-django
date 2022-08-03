@@ -16,6 +16,7 @@
     {% endif %}
     <link rel="stylesheet" href="{% static 'fonts/yekan/Yekan.css' %}">
     <link rel="stylesheet" href="{% static 'styles/base.css' %}">
+    {% block styles %}{% endblock %}
     {% if language_code == 'fa-ir' %}
         <link rel="stylesheet" href="{% static 'styles/base-rtl.css' %}">
     {% endif %}

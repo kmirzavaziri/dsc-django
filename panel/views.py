@@ -4,4 +4,4 @@ from django.shortcuts import render
 
 @login_required
 def home_view(request):
-    return render(request, 'panel/home.html')
+    return render(request, 'panel/base.html')
