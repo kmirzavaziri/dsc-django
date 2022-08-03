@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load main_extras %}
+
+{% block styles %}
+    {{ block.super }}
+    <link rel="stylesheet" href="{% static 'styles/users/list.css' %}">
+{% endblock %}
+
+{% block title %}{% exp 'teacher_search_results' %}{% endblock %}
+
+{% block content %}
+    <div class="row justify-content-center">
+        <div class="col-md-6 p-5 mt-3 card">
+            <h1 class="align-self-center">{% exp 'teacher_search_results' %}</h1>
+            {% for teacher in user_list %}
+                <a href="{% url 'users:profile' teacher.username %}">
+                <div class="teacher-card mt-5 p-3">
+                    <h4 class="mb-3">{{ teacher.first_name }} {{ teacher.last_name }}</h4>
+                    <div class="badge alert-secondary">{{ teacher.username }}</div>
+                </div>
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

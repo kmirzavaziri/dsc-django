@@ -54,6 +54,8 @@ __EXP = {
         'user.type': 'نوع حساب',
         'user.type.teacher': 'استاد',
         'user.type.student': 'دانشجو',
+        'search': 'جست‌وجو',
+        'teacher_search_results': 'نتایج جست‌وجوی استاد',
     },
     'en-us': {
 
