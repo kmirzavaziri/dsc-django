@@ -20,17 +20,28 @@
                         <div class="course-data badge alert-secondary">{{ course.department }}</div>
                         <div class="course-data badge alert-secondary">
                             {{ course.get_first_day_display }}
-                            {% if course.second_day is not None %} {% exp 'generic.and' %} {{ course.get_second_day_display }} {% endif %}
+                            {% if course.second_day is not None %}
+                                {% exp 'generic.and' %} {{ course.get_second_day_display }}
+                            {% endif %}
                         </div>
                         <div class="course-data badge alert-secondary">{{ course.start_time }} {% exp 'generic.time_range_sep' %} {{ course.end_time }}</div>
                         <div class="course-data badge alert-secondary">{{ course.teacher }}</div>
                         <br>
-                        <div id="actions" class=" mt-4">
-                        <a class="btn btn-primary btn-sm" href="{% url 'courses:detail' course.pk %}">
-                            {% exp 'courses.edit' %}
-                        </a>
-                        <input class="btn btn-danger btn-sm" type="submit" value="{% exp 'courses.delete' %}">
-                        </div>
+                        {% if request.user.is_superuser %}
+                            <div id="actions" class=" mt-4">
+                                <a class="btn btn-primary btn-sm" href="{% url 'courses:detail' course.pk %}">
+                                    {% exp 'courses.edit' %}
+                                </a>
+                                <form class="d-inline" method="post" action="{% url 'courses:delete' course.pk %}">
+                                    {% csrf_token %}
+                                    <input
+                                            class="btn btn-danger btn-sm"
+                                            type="submit"
+                                            value="{% exp 'courses.delete' %}"
+                                    >
+                                </form>
+                            </div>
+                        {% endif %}
                     </div>
                 {% endfor %}
             </div>
