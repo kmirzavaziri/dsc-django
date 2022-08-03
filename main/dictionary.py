@@ -27,7 +27,7 @@ __EXP = {
         'panel_menu.list_courses': 'لیست واحدها',
         'panel_menu.new_course': 'ساختن واحد',
         'courses.edit': 'ویرایش',
-        'courses.remove': 'حذف',
+        'courses.delete': 'حذف',
         'courses.detail': 'اطلاعات واحد',
         'courses.department': 'دانشکده',
         'courses.name': 'نام',

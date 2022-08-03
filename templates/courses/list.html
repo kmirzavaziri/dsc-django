@@ -29,7 +29,7 @@
                         <a class="btn btn-primary btn-sm" href="{% url 'courses:detail' course.pk %}">
                             {% exp 'courses.edit' %}
                         </a>
-                        <input class="btn btn-danger btn-sm" type="submit" value="{% exp 'courses.remove' %}">
+                        <input class="btn btn-danger btn-sm" type="submit" value="{% exp 'courses.delete' %}">
                         </div>
                     </div>
                 {% endfor %}
