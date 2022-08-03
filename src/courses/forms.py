@@ -11,17 +11,6 @@ class CourseForm(BootstrapForm, forms.ModelForm):
         model = Course
         fields = ['department', 'name', 'course_number', 'group_number', 'teacher', 'start_time', 'end_time',
                   'first_day', 'second_day']
-        labels = {
-            'department': exp('courses.department'),
-            'name': exp('courses.name'),
-            'course_number': exp('courses.course_number'),
-            'group_number': exp('courses.group_number'),
-            'teacher': exp('courses.teacher'),
-            'start_time': exp('courses.start_time'),
-            'end_time': exp('courses.end_time'),
-            'first_day': exp('courses.first_day'),
-            'second_day': exp('courses.second_day'),
-        }
 
         widgets = {
             'course_number': forms.NumberInput(attrs={'class': 'force-ltr'}),

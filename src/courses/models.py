@@ -11,15 +11,16 @@ class Course(models.Model):
         TUESDAY = 3, exp('week_day.tuesday')
         WEDNESDAY = 4, exp('week_day.wednesday')
 
-    department = models.CharField(max_length=128)
-    name = models.CharField(max_length=128)
-    course_number = models.IntegerField()
-    group_number = models.IntegerField()
-    teacher = models.CharField(max_length=128)
-    start_time = models.TimeField()
-    end_time = models.TimeField()
-    first_day = models.IntegerField(choices=WeekDay.choices, null=False, default=WeekDay.SATURDAY)
+    department = models.CharField(exp('courses.department'), max_length=128)
+    name = models.CharField(exp('courses.name'), max_length=128)
+    course_number = models.IntegerField(exp('courses.course_number'))
+    group_number = models.IntegerField(exp('courses.group_number'))
+    teacher = models.CharField(exp('courses.teacher'), max_length=128)
+    start_time = models.TimeField(exp('courses.start_time'))
+    end_time = models.TimeField(exp('courses.end_time'))
+    first_day = models.IntegerField(exp('courses.first_day'), choices=WeekDay.choices, null=False, default=WeekDay.SATURDAY)
     second_day = models.IntegerField(
+        exp('courses.second_day'),
         choices=[(None, exp('week_day.blank'))] + WeekDay.choices,
         null=True, blank=True, default=None
     )
