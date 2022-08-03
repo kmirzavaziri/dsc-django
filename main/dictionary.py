@@ -24,6 +24,7 @@ __EXP = {
         'profile.username': 'نام کاربری',
         'register.error_messages.unique_username': 'نام کاربری شما در سیستم موجود است',
         'register.error_messages.password_mismatch': 'گذرواژه و تکرار گذرواژه یکسان نیستند',
+        'panel.welcome': 'به پنل کاربری خوش آمدید',
         'panel_menu.list_courses': 'لیست واحدها',
         'panel_menu.new_course': 'ساختن واحد',
         'courses.edit': 'ویرایش',
