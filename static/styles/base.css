@@ -32,10 +32,6 @@ ul {
 
 
 /* Django forms */
-.django-form br, .django-form .helptext {
-    display: none;
-}
-
 .errorlist {
     color: #ffc107!important;
 }

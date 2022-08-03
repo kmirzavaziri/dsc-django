@@ -10,6 +10,10 @@ class RegistrationForm(BootstrapForm, UserCreationForm):
     error_messages = {
         'password_mismatch': exp('register.error_messages.password_mismatch'),
     }
+    help_texts = {
+        'password1': None,
+        'password2': None,
+    }
 
     class Meta:
         model = User
@@ -17,8 +21,6 @@ class RegistrationForm(BootstrapForm, UserCreationForm):
         help_texts = {
             'username': None,
             'email': None,
-            'password1': None,
-            'password2': None,
         }
         error_messages = {
             'username': {
