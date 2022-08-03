@@ -51,6 +51,9 @@ __EXP = {
         'user.gender.female': 'زن',
         'user.bio': 'زندگی‌نامه',
         'user.image': 'عکس',
+        'user.type': 'نوع حساب',
+        'user.type.teacher': 'استاد',
+        'user.type.student': 'دانشجو',
     },
     'en-us': {
 

@@ -14,7 +14,7 @@ class RegistrationForm(BootstrapForm, UserCreationForm):
 
     class Meta:
         model = User
-        fields = ('first_name', 'last_name', 'username', 'email', 'password1', 'password2')
+        fields = ['type', 'first_name', 'last_name', 'username', 'email', 'password1', 'password2']
         help_texts = {
             'username': None,
             'email': None,
