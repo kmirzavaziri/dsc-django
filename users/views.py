@@ -3,6 +3,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.views import LoginView
 from django.shortcuts import render, redirect
 from django.urls import reverse
+from django.views.decorators.http import require_http_methods
 
 from .forms import RegistrationForm, LoginForm, SettingForm
 from .decorators import not_logged_in_required
@@ -20,6 +21,7 @@ def logout_view(request):
 
 
 @not_logged_in_required
+@require_http_methods(["GET", "POST"])
 def register_view(request):
     if request.method == 'POST':
         form = RegistrationForm(request.POST)
@@ -37,6 +39,7 @@ def profile_view(request):
 
 
 @login_required
+@require_http_methods(["GET", "POST"])
 def setting_view(request):
     if request.method == 'POST':
         form = SettingForm(request.POST, instance=request.user)
