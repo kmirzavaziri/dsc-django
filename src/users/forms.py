@@ -1,9 +1,10 @@
 from django import forms
-from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 
 from main.dictionary import exp
 from main.forms import BootstrapForm
+
+from .models import User
 
 
 class RegistrationForm(BootstrapForm, UserCreationForm):
@@ -32,7 +33,7 @@ class LoginForm(BootstrapForm, AuthenticationForm):
 class SettingForm(BootstrapForm, forms.ModelForm):
     class Meta:
         model = User
-        fields = ['first_name', 'last_name']
+        fields = ['first_name', 'last_name', 'gender', 'bio']
 
     def clean_first_name(self):
         first_name = self.cleaned_data['first_name']

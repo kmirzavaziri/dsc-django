@@ -46,6 +46,10 @@ __EXP = {
         'week_day.tuesday': 'سه‌شنبه',
         'week_day.wednesday': 'چهارشنبه',
         'courses.save': 'ذخیره',
+        'user.gender': 'جنسیت',
+        'user.gender.male': 'مرد',
+        'user.gender.female': 'زن',
+        'user.bio': 'زندگی‌نامه',
     },
     'en-us': {
 
