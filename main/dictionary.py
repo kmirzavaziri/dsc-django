@@ -2,6 +2,8 @@ from main.settings import LANGUAGE_CODE
 
 __EXP = {
     'fa-ir': {
+        'generic.and': 'و',
+        'generic.time_range_sep': 'تا',
         'django_project': 'پروژه جنگو',
         'home': 'صفحه اصلی',
         'profile': 'نمایه',
@@ -22,7 +24,10 @@ __EXP = {
         'profile.username': 'نام کاربری',
         'register.error_messages.unique_username': 'نام کاربری شما در سیستم موجود است',
         'register.error_messages.password_mismatch': 'گذرواژه و تکرار گذرواژه یکسان نیستند',
+        'panel_menu.list_courses': 'لیست واحدها',
         'panel_menu.new_course': 'ساختن واحد',
+        'courses.edit': 'ویرایش',
+        'courses.remove': 'حذف',
         'courses.detail': 'اطلاعات واحد',
         'courses.department': 'دانشکده',
         'courses.name': 'نام',

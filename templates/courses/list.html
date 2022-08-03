@@ -1,0 +1,39 @@
+{% extends 'panel/base.html' %}
+{% load static %}
+{% load main_extras %}
+
+{% block styles %}
+    {{ block.super }}
+    <link rel="stylesheet" href="{% static 'styles/courses/list.css' %}">
+{% endblock %}
+
+{% block title %}{% exp 'panel_menu.list_courses' %}{% endblock %}
+
+{% block panel_content %}
+    <div class="row justify-content-center">
+        <div class="col-md-6 p-5 mt-3 card">
+            <h1 class="align-self-center">{% exp 'panel_menu.list_courses' %}</h1>
+            <div id="all_courses">
+                {% for course in course_list %}
+                    <div class="{{ course.course_number }}_{{ course.group_number }} course-card mt-5 p-3">
+                        <h4 class="mb-3">{{ course.name }}</h4>
+                        <div class="course-data badge alert-secondary">{{ course.department }}</div>
+                        <div class="course-data badge alert-secondary">
+                            {{ course.get_first_day_display }}
+                            {% if course.second_day is not None %} {% exp 'generic.and' %} {{ course.get_second_day_display }} {% endif %}
+                        </div>
+                        <div class="course-data badge alert-secondary">{{ course.start_time }} {% exp 'generic.time_range_sep' %} {{ course.end_time }}</div>
+                        <div class="course-data badge alert-secondary">{{ course.teacher }}</div>
+                        <br>
+                        <div id="actions" class=" mt-4">
+                        <a class="btn btn-primary btn-sm" href="{% url 'courses:detail' course.pk %}">
+                            {% exp 'courses.edit' %}
+                        </a>
+                        <input class="btn btn-danger btn-sm" type="submit" value="{% exp 'courses.remove' %}">
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

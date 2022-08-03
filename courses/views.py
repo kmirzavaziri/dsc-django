@@ -6,8 +6,9 @@ from .forms import CourseForm
 from .models import Course
 
 
-def course_list_view(request):
-    return render(request, 'courses/list.html')
+class CourseListView(generic.ListView):
+    model = Course
+    template_name = 'courses/list.html'
 
 
 class CreateCourseView(generic.CreateView):

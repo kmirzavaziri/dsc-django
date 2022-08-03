@@ -12,6 +12,7 @@
     <div id="wrapper">
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
+                <li><a id="courses" href="{% url 'courses:list' %}">{% exp 'panel_menu.list_courses' %}</a></li>
                 <li><a id="make_new_course" href="{% url 'courses:new' %}">{% exp 'panel_menu.new_course' %}</a></li>
             </ul>
         </div>
