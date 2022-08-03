@@ -28,6 +28,7 @@ DEBUG = os.getenv('DJANGO_DEBUG', True)
 
 ALLOWED_HOSTS = list(filter(lambda x: x != '', os.getenv('DJANGO_ALLOWED_HOSTS', '').split(' ')))
 
+CSRF_TRUSTED_ORIGINS = list(filter(lambda x: x != '', os.getenv('DJANGO_CSRF_TRUSTED_ORIGINS', '').split(' ')))
 
 # Application definition
 

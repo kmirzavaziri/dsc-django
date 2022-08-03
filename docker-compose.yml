@@ -5,6 +5,8 @@ services:
     image: nginx
     volumes:
       - ./nginx/conf.d:/etc/nginx/conf.d/
+      - ./src/static:/var/www/static/
+      - ./src/media:/var/www/media/
     ports:
       - "8000:80"
     depends_on:
@@ -17,6 +19,7 @@ services:
       DJANGO_SECRET_KEY: ${DJANGO_SECRET_KEY}
       DEBUG: ${DEBUG}
       DJANGO_ALLOWED_HOSTS: ${DJANGO_ALLOWED_HOSTS}
+      DJANGO_CSRF_TRUSTED_ORIGINS: ${DJANGO_CSRF_TRUSTED_ORIGINS}
       DATABASE_ENGINE: ${DATABASE_ENGINE}
       DATABASE_NAME: ${DATABASE_NAME}
       DATABASE_USERNAME: ${DATABASE_USERNAME}

@@ -1,4 +1,4 @@
-FROM python:3.9.13-alpine3.16
+FROM python:3.9
 
 WORKDIR /app
 
@@ -9,9 +9,8 @@ RUN pip install --upgrade pip
 COPY ./src/requirements.txt /app/requirements.txt
 RUN pip install -r requirements.txt
 
+COPY ./docker/run.sh /gunicorn_django/run.sh
+RUN chmod +x /gunicorn_django/run.sh
 WORKDIR /app
 
-ENV VIRTUAL_ENV /env
-ENV PATH /env/bin:$PATH
-
-CMD ["gunicorn", "--bind", "0.0.0.0:8001", "--workers", "1", "main.wsgi:application"]
+CMD /gunicorn_django/run.sh
