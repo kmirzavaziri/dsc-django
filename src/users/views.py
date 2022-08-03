@@ -50,7 +50,7 @@ def setting_view(request):
         form = SettingForm(request.POST, request.FILES, instance=request.user)
         if form.is_valid():
             form.save()
-            return redirect('users:profile')
+            return redirect(reverse('users:profile', args=(request.user.username, )))
     else:
         form = SettingForm(instance=request.user)
     return render(request, 'users/setting.html', {'form': form})
