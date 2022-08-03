@@ -14,4 +14,4 @@ WORKDIR /app
 ENV VIRTUAL_ENV /env
 ENV PATH /env/bin:$PATH
 
-CMD ["gunicorn", "--bind", ":8000", "--workers", "1", "main.wsgi:application"]
+CMD ["gunicorn", "--bind", "0.0.0.0:8001", "--workers", "1", "main.wsgi:application"]

@@ -25,9 +25,13 @@ services:
       DATABASE_PORT: ${DATABASE_PORT}
     volumes:
        - ./src:/app
+    ports:
+      - "8001:8001"
     networks:
       - db
       - web
+    depends_on:
+      - db
   db:
     image: postgres
     environment:
@@ -36,12 +40,15 @@ services:
       POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
       PGDATA: /data/postgres
     volumes:
-       - ./postgres:/data/postgres
+       - postgres:/data/postgres
     ports:
       - "5432:5432"
     networks:
       - db
     restart: unless-stopped
+
+volumes:
+  postgres:
 
 networks:
   db:
