@@ -1,5 +1,4 @@
-from django.shortcuts import render
-from django.urls import reverse
+from django.urls import reverse, reverse_lazy
 from django.views import generic
 
 from .forms import CourseForm
@@ -23,3 +22,4 @@ class UpdateCourseView(generic.UpdateView):
     model = Course
     form_class = CourseForm
     template_name = 'courses/detail.html'
+    success_url = reverse_lazy('courses:list')
