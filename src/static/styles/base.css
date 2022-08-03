@@ -9,6 +9,10 @@ body {
     padding-top: 50px;
 }
 
+p {
+    text-align: justify;
+}
+
 a {
     text-decoration: inherit;
     color: inherit;
@@ -39,6 +43,16 @@ ul {
     color: white;
 }
 
+.user-image {
+    background-size: cover;
+    width: 150px;
+    height: 150px;
+    border-radius: 1999px;
+}
+
+article.markdown a {
+    color: #0d6efd;
+}
 
 /* Django forms */
 .django-form br, .django-form .helptext {

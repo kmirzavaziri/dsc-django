@@ -33,7 +33,7 @@ class LoginForm(BootstrapForm, AuthenticationForm):
 class SettingForm(BootstrapForm, forms.ModelForm):
     class Meta:
         model = User
-        fields = ['first_name', 'last_name', 'gender', 'bio']
+        fields = ['first_name', 'last_name', 'gender', 'bio', 'image']
 
     def clean_first_name(self):
         first_name = self.cleaned_data['first_name']

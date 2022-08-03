@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load main_extras %}
+{% load markdownify %}
 
 {% block title %}{% exp 'profile' %}{% endblock %}
 
@@ -7,16 +8,27 @@
     <div class="row justify-content-center">
         <div class="col-md-6 p-5 mt-3 card">
             <h1 class="align-self-center">{% exp 'profile' %}</h1>
-            <h6 class="text-secondary mt-4">{% exp 'user.first_name' %}</h6>
-            <span id="text_first_name">{{ request.user.first_name }}</span>
-            <h6 class="text-secondary mt-4">{% exp 'user.last_name' %}</h6>
-            <span id="text_last_name">{{ request.user.last_name }}</span>
-            <h6 class="text-secondary mt-4">{% exp 'user.username' %}</h6>
-            <span id="text_username">{{ request.user.username }}</span>
-            <h6 class="text-secondary mt-4">{% exp 'user.gender' %}</h6>
-            <span id="text_gender">{{ request.user.get_gender_display }}</span>
-            <h6 class="text-secondary mt-4">{% exp 'user.bio' %}</h6>
-            <span id="text_bio">{{ request.user.bio }}</span>
+            <div class="user-image align-self-center" style="background-image: url('{{ request.user.image.url }}');"></div>
+            <div class="row">
+                <div class="col-md-3">
+                    <h6 class="text-secondary mt-4">{% exp 'user.first_name' %}</h6>
+                    <span id="text_first_name">{{ request.user.first_name }}</span>
+                </div>
+                <div class="col-md-3">
+                    <h6 class="text-secondary mt-4">{% exp 'user.last_name' %}</h6>
+                    <span id="text_last_name">{{ request.user.last_name }}</span>
+                </div>
+                <div class="col-md-3">
+                    <h6 class="text-secondary mt-4">{% exp 'user.username' %}</h6>
+                    <span id="text_username">{{ request.user.username }}</span>
+                </div>
+                <div class="col-md-3">
+                    <h6 class="text-secondary mt-4">{% exp 'user.gender' %}</h6>
+                    <span id="text_gender">{{ request.user.get_gender_display }}</span>
+                </div>
+                <h6 class="text-secondary mt-4">{% exp 'user.bio' %}</h6>
+                <article id="text_bio" class="markdown">{{ request.user.bio|markdownify }}</article>
+            </div>
             <a class="btn btn-primary mt-5" id="setting" href="{% url 'users:setting' %}">{% exp 'edit_profile' %}</a>
         </div>
     </div>

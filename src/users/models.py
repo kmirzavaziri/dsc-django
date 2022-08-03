@@ -10,3 +10,4 @@ class User(AbstractUser):
         FEMALE = 'F', exp('user.gender.female')
     gender = models.CharField(exp('user.gender'), choices=Gender.choices, max_length=1)
     bio = models.TextField(exp('user.bio'), blank=True)
+    image = models.ImageField(exp('user.image'), null=True, default=None)

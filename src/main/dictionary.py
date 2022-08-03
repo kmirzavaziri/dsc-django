@@ -50,6 +50,7 @@ __EXP = {
         'user.gender.male': 'مرد',
         'user.gender.female': 'زن',
         'user.bio': 'زندگی‌نامه',
+        'user.image': 'عکس',
     },
     'en-us': {
 

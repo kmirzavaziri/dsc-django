@@ -42,7 +42,7 @@ def profile_view(request):
 @require_http_methods(["GET", "POST"])
 def setting_view(request):
     if request.method == 'POST':
-        form = SettingForm(request.POST, instance=request.user)
+        form = SettingForm(request.POST, request.FILES, instance=request.user)
         if form.is_valid():
             form.save()
             return redirect('users:profile')
