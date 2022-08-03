@@ -1,4 +1,4 @@
-from django.contrib.auth.mixins import AccessMixin
+from django.http.response import HttpResponseForbidden
 from django.shortcuts import redirect
 from django.urls import reverse
 
@@ -14,6 +14,6 @@ def not_logged_in_required(func):
 def superuser_required(func):
     def wrapper(request, *args, **kwargs):
         if not request.user.is_authenticated or not request.user.is_superuser:
-            return AccessMixin().handle_no_permission()
+            return HttpResponseForbidden()
         return func(request, *args, **kwargs)
     return wrapper
